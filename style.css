@@ -1,0 +1,674 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav,
+.nav_item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo,
+.nav_link,
+.button {
+    color: #fff;
+}
+
+.nav_logo {
+    font-size: 25px;
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: "Brush Script MT";
+    color: purple;
+}
+
+.nav_item {
+    column-gap: 25px;
+}
+
+.nav_link:hover {
+    color: purple;
+}
+
+.button {
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background-color: pink;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* Home */
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/023/130/979/non_2x/happy-birthday-background-with-cake-illustration-ai-generative-free-photo.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.home::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0,6);
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease-out;
+}
+.home.show::before {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/*Form*/
+.form_container {
+	position: absolute;
+	max-width: 320px;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.2);
+	z-index: 101;
+	background: #fff;
+	padding: 25px;
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1.2);
+}
+.signup_form {
+	display: none;
+}
+.form_container.active .signup_form {
+	display: block;
+}
+
+.form_close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: #0b0217;
+	font-size: 22px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+.form_container h2{
+	font-size: 22px;
+	color: #0b0217;
+	text-align: center;
+}
+.input_box {
+	position: relative;
+	margin-top: 30px;
+	width: 100%;
+	height: 40px;
+}
+.input_box input {
+	height: 100%;
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 0 30px;
+	color: #333;
+	transition: all 0.2s ease;
+	border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+	border-color: #7d2ae8;
+}
+.input_box i {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+.input_box i.email, 
+.input_box i.password {
+	left: 0;
+	color: #707070;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+	color: #7d2ae8;
+}
+.input_box i.pw_hide {
+	right: 0;
+	font-size: 18px;
+}
+.option_field {
+	margin-top: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.form_container a {
+	color: #7d2ae8;
+	font-size: 12px;
+}
+.form_container a:hover {
+	text-decoration: underline;
+}
+.checkbox {
+	display: flex;
+	column-gap: 8px;
+	white-space: nowrap;
+	font-size: 12px;
+}
+.checkbox input {
+	accent-color: #7d2ae8;
+}
+.checkbox label {
+	font-size: 12px;
+	cursor: pointer;
+	user-select: none;
+	color: #0b0217;
+}
+.form_container .button {
+	background: #7d2ae8;
+	margin-top: 30px;
+	width: 100%;
+	padding: 10px 0;
+	border-radius: 10px;
+}
+.login_signup {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 15px;
+}
+body {
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+.body.home-page .nav_items {
+    color: #ff0000; 
+    border: 2px solid #000000;
+    padding: 10px; 
+}
+.main {
+      padding: 80px 20px;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-position: center;
+      background-image: url('https://wallpapers.com/images/hd/purple-and-black-background-z1rsm54sbv5duut7.jpg');
+      background-size: cover;
+}
+.mySlides{
+    width: 35%;
+    margin-left: 63%;
+    
+}
+.h1.h1{
+    text-shadow: #818181;
+    margin-left: 500px;
+    margin-top: -80px;
+    color: white;
+}
+
+.h2.h2{
+    text-shadow: #818181;
+    margin-left: 180px;
+    margin-top: -450px;
+    color: white;
+    font-family:Brush Script MT;
+}
+ 
+
+.heading{
+    text-align: center;
+}
+
+.heading span{
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.heading p{
+    font-size: 0.938rem;
+    font-weight: 300;
+}
+
+/* Add any specific styles for the cakes.html page here */
+
+.cakes-page {
+    background-image: url('https://www.hdwallpapers.in/download/dark_light_pink_shades_pink_background_hd_pink_background-2560x1440.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.cakes {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.heading p {
+    font-size: 16px;
+    color: #666;
+}
+
+.cakes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Responsive design - adjust the width of the boxes on smaller screens */
+@media (max-width: 800px) {
+    .box {
+        width: 100%;
+    }
+}
+
+
+body {
+            background-color: #b3a8a8;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .about-page {
+            background-image: url('https://i.pinimg.com/originals/f1/c3/ed/f1c3ed5cc23753056349b4b98f45cf91.jpg');
+            background-size: cover;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 100;
+            padding: 10px 20px;
+        }
+
+        .nav_items {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav_link {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease; /* Add a smooth color transition */
+        }
+
+        .nav_link:hover {
+            color: #FF4500; /* Set your desired hover color */
+        }
+
+        /* Add styles for the about section */
+        .about {
+            padding: 80px 20px; /* Adjust padding as needed */
+            text-align: center;
+            color: #333; /* Set your desired text color */
+        }
+
+        .about-text span {
+            font-size: 18px;
+            color: #FF4500; /* Set your desired span color */
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: pink; /* Set your desired background color */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+        .about-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+body, h1, h2, h3, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+.order {
+            padding: 80px 20px; /* Adjust padding as needed */
+            text-align: center;
+            color: #333; /* Set your desired text color */
+        }
+
+.heading {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.order-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    width: calc(60% - 20px); /* 20px margin on each side */
+    margin: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.box h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.box span {
+    display: block;
+    font-size: 1.2em;
+    color: #e44d26;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.details {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+
+.details:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer styles (if any) */
+/* ... (your existing styles for other parts of the website) ... */
+
+/* Style for the blog section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Adjust background color as needed */
+}
+
+.blog {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f7c863;
+}
+
+.heading {
+    color: #333;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box {
+    width: 300px;
+    margin: 15px;
+    background-color: #fff; /* Adjust background color as needed */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust box shadow as needed */
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd; /* Adjust border color as needed */
+}
+
+.box span {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.box h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333; /* Change font color for the h3 element */
+}
+
+.box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666; /* Change font color for the paragraph text */
+    padding: 0 10px;
+}
+
+.blog-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #FF4500; /* Adjust background color as needed */
+    color: #fff; /* Change font color for the button text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-btn:hover {
+    background-color: #e53e3e; /* Adjust hover background color as needed */
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+.label {
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#successMessage {
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #9F2B68;
+    color: #fff;
+    padding: 40px 0;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-box p {
+    color: #fff;
+    margin: 0;
+}
+
+.social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Copyright Styles */
+.copyright {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}

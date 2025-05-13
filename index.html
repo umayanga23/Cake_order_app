@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrawa Cakes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <section class="index" id="index">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="nav_logo"> Cakes</a>
+                <ul class="nav_items">
+                    <li class="nav_item">
+                        <a href="home.html" class="nav_link">HOME</a>
+                        <a href="cakes.html" class="nav_link">CAKES</a>
+                        <a href="about.html" class="nav_link">ABOUT US</a>
+                        <a href="order.html" class="nav_link">ORDER NOW</a>
+                        <a href="blogs.html" class="nav_link">OUR BLOGS</a>
+                        <a href="contact.html" class="nav_link">CONTACT US</a>
+                        <a href="vieworder.php" class="nav_link">view order</a>
+                    </li>
+                </ul>
+                <button class="button" id="form-open">Login</button>
+            </nav>
+        </header>
+
+        <!-- Home -->
+        <section class="home">
+            <div class="form_container">
+                <i class="uil uil-times form_close"></i>
+                <!-- Login Form -->
+                <div class="form login_form">
+                    <form id="loginForm" onsubmit="return validateLoginForm()" method="POST" action="login.php">
+                        <h2>Login</h2>
+
+                        <div class="input_box">
+                            <input type="email" name="email" id="loginEmail" placeholder="Enter your email" required />
+                            <i class="uil uil-envelope-alt email"></i>
+                        </div>
+                        <div class="input_box">
+                            <input type="password" name="password" id="loginPassword" placeholder="Enter your password" required />
+                            <i class="uil uil-lock password"></i>
+                            <i class="uil uil-eye-slash pw_hide"></i>
+                        </div>
+
+                        <div class="option_field">
+                            <span class="checkbox">
+                                <input type="checkbox" id="check" name="remember">
+                                <label for="check">Remember me</label>
+                            </span>
+                            <a href="#" class="forgot_pw">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="button">Login Now</button>
+
+                        <div class="login_signup">Don't have an account? <a href="#" id="signup-link">Signup</a></div>
+                    </form>
+                </div>
+                <!-- Signup Form -->
+                <div class="form signup_form">
+                    <form id="signupForm" onsubmit="return validateSignupForm()" method="POST" action="signup.php">
+                        <h2>Signup</h2>
+
+                        <div class="input_box">
+                            <input type="email" name="email" id="signupEmail" placeholder="Enter your email" required />
+                            <i class="uil uil-envelope-alt email"></i>
+                        </div>
+                        <div class="input_box">
+                            <input type="password" name="password" id="signupPassword" placeholder="Create password" required />
+                            <i class="uil uil-lock password"></i>
+                            <i class="uil uil-eye-slash pw_hide"></i>
+                        </div>
+                        <div class="input_box">
+                            <input type="password" name="confirm_password" id="confirmPassword" placeholder="Confirm password" required />
+                            <i class="uil uil-lock password"></i>
+                            <i class="uil uil-eye-slash pw_hide"></i>
+                        </div>
+
+                        <button type="submit" class="button">Signup Now</button>
+
+                        <div class="login_signup">Already have an account? <a href="#" id="login-link">Login</a></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const formOpenButton = document.getElementById('form-open');
+                const formCloseButton = document.querySelector('.form_close');
+                const loginForm = document.querySelector('.login_form');
+                const signupForm = document.querySelector('.signup_form');
+
+                // Function to open the login form
+                function openLoginForm() {
+                    loginForm.style.display = 'block';
+                    signupForm.style.display = 'none';
+                }
+
+                // Function to open the signup form
+                function openSignupForm() {
+                    loginForm.style.display = 'none';
+                    signupForm.style.display = 'block';
+                }
+
+                // Event listener for opening the login form
+                formOpenButton.addEventListener('click', openLoginForm);
+
+                // Event listener for opening the signup form
+                signupForm.addEventListener('click', openSignupForm);
+
+                // Event listener for closing the form
+                formCloseButton.addEventListener('click', function () {
+                    loginForm.style.display = 'none';
+                    signupForm.style.display = 'none';
+                });
+            });
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+        const formOpenButton = document.getElementById('form-open');
+        const formCloseButton = document.querySelector('.form_close');
+        const loginForm = document.querySelector('.login_form');
+        const signupForm = document.querySelector('.signup_form');
+
+        // Function to open the login form
+        function openLoginForm() {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        }
+
+        // Function to open the signup form
+        function openSignupForm() {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        }
+
+        // Event listener for opening the login form
+        formOpenButton.addEventListener('click', openLoginForm);
+
+        // Event listener for opening the signup form
+        const signupLink = document.getElementById('signup-link');
+        signupLink.addEventListener('click', openSignupForm);
+
+        // Event listener for closing the form
+        formCloseButton.addEventListener('click', function () {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'none';
+        });
+    });
+	function validateSignupForm() {
+        var email = document.getElementById('signupEmail').value;
+        var password = document.getElementById('signupPassword').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Basic validation, you can add more checks
+        if (email === '' || password === '' || confirmPassword === '') {
+            alert('Please fill in all fields for signup.');
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Password and confirm password do not match.');
+            return false;
+        }
+
+        return true;
+    }
+        </script>
+    </section>
+</body>
+
+</html>

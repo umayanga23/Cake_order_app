@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and title here -->
+    <title>Order Page</title>
+    <link rel="stylesheet" href="style.css">
+ <style>
+        .order-form {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ddd;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="ordernow-page">
+
+    <!--header-->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="home.html" class="nav_link">HOME</a>
+                    <a href="cakes.html" class="nav_link">CAKES</a>
+                    <a href="about.html" class="nav_link">ABOUT US</a>
+                    <a href="order.html" class="nav_link">ORDER NOW</a>
+                    <a href="blogs.html" class="nav_link">OUR BLOGS</a>
+                    <a href="contact.html" class="nav_link">CONTACT US</a>
+                    <a href="vieworder.php" class="nav_link">view order</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="order" id="order">
+        <div class="heading">
+            <span>Handmade Cake with Love.</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae consequuntur similique modi omnis assumenda, a veritatis, minus eveniet iusto natus</p>
+        </div>
+
+        <!-- Order Section -->
+        <div class="order-container container">
+            <!-- Box 1 -->
+            <div class="box">
+                <img src="img/8.jpeg" alt="">
+                <h3>Vanilla Dipping Cake</h3>
+                <span>$20.99</span>
+                <a href="#" class="btn" onclick="showOrderForm('Vanilla Dipping Cake', 20.99)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="box">
+                <img src="img/9.jpeg" alt="">
+                <h3>Simple Buttercream Cake</h3>
+                <span>$12</span>
+                <a href="#" class="btn" onclick="showOrderForm('Simple Buttercream Cake', 12)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box">
+                <img src="img/10.jpeg" alt="">
+                <h3>Geometric Hearts</h3>
+                <span>$8</span>
+                <a href="#" class="btn" onclick="showOrderForm('Geometric Hearts', 8)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="box">
+                <img src="img/11.jpeg" alt="">
+                <h3>Cuppies</h3>
+                <span>$8</span>
+                <a href="#" class="btn" onclick="showOrderForm('Cuppies', 8)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="box">
+                <img src="img/1.jpeg" alt="">
+                <h3>Double Layer Cake</h3>
+                <a href="#" class="btn" onclick="showOrderForm('Double Layer Cake', 0)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="box">
+                <img src="img/13.jpeg" alt="">
+                <h3>Two-Tier Vanilla Cake</h3>
+                <span>$16</span>
+                <a href="#" class="btn" onclick="showOrderForm('Two-Tier Vanilla Cake', 16)">Order Now</a><br>
+                <a href="#" class="details">View Details</a>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="order-form" id="order-form" style="display:none;">
+        <h2>Order Form</h2>
+        <form onsubmit="return submitOrderForm()" action="Order.php" method="POST">
+            <label for="item">Item:</label>
+            <input type="text" id="item" name="item" readonly>
+
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" readonly>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="size">Size:</label>
+            <input type="text" id="size" name="size" required>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="cash">Cash on Delivery</option>
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>
+            </select>
+
+            <label for="deliveryDate">Delivery Date:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate" required>
+
+            <input type="submit" value="Place Order">
+        </form>
+    </section>
+
+    <script>
+        function showOrderForm(item, price) {
+            // Show the order form
+            document.getElementById('order-form').style.display = 'block';
+
+            // Set hidden fields with item and price values
+            document.getElementById('item').value = item;
+            document.getElementById('price').value = price;
+        }
+
+        function closeOrderForm() {
+            // Close the order form
+            document.getElementById('order-form').style.display = 'none';
+        }
+
+        function submitOrderForm() {
+    // Get form data
+    const formData = new FormData(document.querySelector('form'));
+
+    // Fetch options
+    const options = {
+        method: 'POST',
+        body: formData,
+    };
+
+    // Make a fetch request to the PHP script
+    fetch('Order.php', options)
+        .then(response => response.text())
+        .then(data => {
+            // Handle the response from the server (data returned by the PHP script)
+            alert(data);
+
+            // Reset form and hide it
+            document.querySelector('form').reset();
+            document.getElementById('order-form').style.display = 'none';
+        })
+        .catch(error => console.error('Error:', error));
+
+    // Prevent the default form submission
+    return false;
+}
+
+    </script>
+</body>
+</html>

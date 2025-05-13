@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and title here -->
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+    <!--header-->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="home.html" class="nav_link">HOME</a>
+                    <a href="cakes.html" class="nav_link">CAKES</a>
+                    <a href="about.html" class="nav_link">ABOUT US</a>
+                    <a href="order.html" class="nav_link">ORDER NOW</a>
+                    <a href="blogs.html" class="nav_link">OUR BLOGS</a>
+                    <a href="contact.html" class="nav_link">CONTACT US</a>
+                    <a href="vieworder.php" class="nav_link">view order</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main" id="main">
+        <!-- Home page content here -->
+        <div class="w3-content w3-section">
+            <img class="mySlides" src="img/19.jpeg">
+            <img class="mySlides" src="img/13.jpeg">
+            <img class="mySlides" src="img/20.jpeg">
+        </div>
+        <div class="h1">
+            <h1>AmRaWa Cakes</h1>
+        </div>
+        <div class="h2">
+            <h2>Happiness starts here...<br>
+                Make by hand, from cake with love...<br>
+                We make memories....<br>
+                Bliss... Every bite...<br>
+                From cake to heart, we bake joy...<br>
+                Memories are made sweet, one slice at a time...<br>
+                Baking up joy, creating smiles...<br>
+                Our cakes are a symphony of flavors, a melody of memories...
+            </h2>
+        </div>
+
+        <script src="js/script.js"></script>
+
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+    </section>
+</body>
+</html>
